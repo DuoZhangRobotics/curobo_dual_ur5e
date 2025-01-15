@@ -233,7 +233,7 @@ def main():
             continue
 
         if step_index == 50 or step_index % 1000 == 0.0:
-            print("Updating world, reading w.r.t.", robot_prim_path)
+            print("Updating world test, reading w.r.t.", robot_prim_path)
             obstacles = usd_help.get_obstacles_from_stage(
                 # only_paths=[obstacles_path],
                 reference_prim_path=robot_prim_path,
@@ -252,11 +252,17 @@ def main():
 
         # position and orientation of target virtual cube:
         cube_position, cube_orientation = target.get_world_pose()
-
         if past_pose is None:
             past_pose = cube_position
         if target_pose is None:
             target_pose = cube_position
+
+        if step_index == 50 or step_index % 100 == 0.0:
+            print("Cube position" + str(cube_position))
+            print("target pose" + str(target_pose))
+            print("past pose" + str(past_pose))
+
+        
         sim_js = robot.get_joints_state()
         sim_js_names = robot.dof_names
         cu_js = JointState(
@@ -288,11 +294,17 @@ def main():
                     spheres[si].set_world_pose(position=np.ravel(s.position))
                     spheres[si].set_radius(float(s.radius))
         # print(sim_js.velocities)
-        if (
+        solve_now = (
             np.linalg.norm(cube_position - target_pose) > 1e-3
             and np.linalg.norm(past_pose - cube_position) == 0.0
-            and np.max(np.abs(sim_js.velocities)) < 0.2
-        ):
+            and np.max(np.abs(sim_js.velocities)) < 0.4
+        )
+        if step_index == 50 or step_index % 100 == 0.0:
+            for i in range(len(sim_js_names)):
+                print(sim_js_names[i] + " : ", "position=", str(sim_js.positions[i]), " velocity=", str(sim_js.velocities[i]))
+            print("solve now" + str(solve_now))
+
+        if solve_now:
             # Set EE teleop goals, use cube for simple non-vr init:
             ee_translation_goal = cube_position
             ee_orientation_teleop_goal = cube_orientation
@@ -316,6 +328,7 @@ def main():
             # ik_result = ik_solver.solve_single(ik_goal, cu_js.position.view(1,-1), cu_js.position.view(1,1,-1))
 
             succ = result.success.item()  # ik_result.success.item()
+            print("Plan converged: " + str(succ))
             if succ:
                 cmd_plan = result.get_interpolated_plan()
                 cmd_plan = motion_gen.get_full_js(cmd_plan)

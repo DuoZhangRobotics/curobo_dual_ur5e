@@ -109,6 +109,9 @@ from omni.isaac.core.objects import cuboid, sphere
 
 ########### OV #################
 from omni.isaac.core.utils.types import ArticulationAction
+from omni.isaac.dynamic_control import _dynamic_control
+
+dc = _dynamic_control.acquire_dynamic_control_interface()
 
 # CuRobo
 # from curobo.wrap.reacher.ik_solver import IKSolver, IKSolverConfig
@@ -362,7 +365,11 @@ def main():
                         spheres[si].set_radius(float(s.radius))
 
         robot_static = False
-        if (np.max(np.abs(sim_js.velocities)) < 0.2) or args.reactive:
+        if step_index == 50 or step_index % 100 == 0.0:
+            sim_joint_forces = robot.get_measured_joint_efforts()
+            for i in range(len(sim_js_names)):
+                print(sim_js_names[i] + " : ", "position=", str(sim_js.positions[i]), " velocity=", str(sim_js.velocities[i]), " force=", str(sim_joint_forces[i]))
+        if (np.max(np.abs(sim_js.velocities)) < 0.4) or args.reactive:
             robot_static = True
         if (
             (
