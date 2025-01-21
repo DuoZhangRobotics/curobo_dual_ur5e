@@ -72,7 +72,8 @@
   <joint name="base_fixture_j_base_link" type="fixed">
     <parent link="base_fixture_link"/>
     <child link="base_link"/>
-    <origin rpy=" 0 0 0" xyz="-0.04999999999999999 0.0 0.0"/>
+    <!-- <origin rpy=" 0 0 0" xyz="-0.05 0.0 0.0"/> -->
+    <origin rpy=" 0 0 0" xyz="-0.55 0.0 0.0"/>
   </joint>
 
 
@@ -80,7 +81,8 @@
   <joint name="base_fixture_j_base_link_1" type="fixed">
     <parent link="base_fixture_link"/>
     <child link="base_link_1"/>
-    <origin rpy=" 0 0 0" xyz="1.05 0.015 0.0"/>
+    <!-- <origin rpy=" 0 0 0" xyz="1.05 0.015 0.0"/> -->
+    <origin rpy=" 0 0 0" xyz="0.55 0.0 0.0"/>
   </joint>
 
 

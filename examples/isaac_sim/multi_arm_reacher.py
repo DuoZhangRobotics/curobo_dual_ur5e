@@ -257,12 +257,6 @@ def main():
         if target_pose is None:
             target_pose = cube_position
 
-        if step_index == 50 or step_index % 100 == 0.0:
-            print("Cube position" + str(cube_position))
-            print("target pose" + str(target_pose))
-            print("past pose" + str(past_pose))
-
-        
         sim_js = robot.get_joints_state()
         sim_js_names = robot.dof_names
         cu_js = JointState(
@@ -300,20 +294,32 @@ def main():
             and np.max(np.abs(sim_js.velocities)) < 0.4
         )
         if step_index == 50 or step_index % 100 == 0.0:
-            for i in range(len(sim_js_names)):
-                print(sim_js_names[i] + " : ", "position=", str(sim_js.positions[i]), " velocity=", str(sim_js.velocities[i]))
+            # for i in range(len(sim_js_names)):
+            #     print(sim_js_names[i] + " : ", "position=", str(sim_js.positions[i]), " velocity=", str(sim_js.velocities[i]))
+            if np.max(np.abs(sim_js.velocities)) > 0.4:
+                print("Max velocity exceeded")
             print("solve now" + str(solve_now))
 
         if solve_now:
             # Set EE teleop goals, use cube for simple non-vr init:
             ee_translation_goal = cube_position
             ee_orientation_teleop_goal = cube_orientation
+            print("ee_orientation_teleop_goal" + str(ee_orientation_teleop_goal))
 
             # compute curobo solution:
             ik_goal = Pose(
                 position=tensor_args.to_device(ee_translation_goal),
                 quaternion=tensor_args.to_device(ee_orientation_teleop_goal),
             )
+
+            ####################
+            # c_p = np.array([0.0, 0, 0.1])
+            # c_rot = np.array([0, -0.707, 0.707, 0])
+            # ik_goal = Pose(
+            #     position=tensor_args.to_device(c_p),
+            #     quaternion=tensor_args.to_device(c_rot),
+            # )
+            ##################
             # add link poses:
             link_poses = {}
             for i in target_links.keys():
@@ -323,7 +329,8 @@ def main():
                     quaternion=tensor_args.to_device(c_rot),
                 )
             result = motion_gen.plan_single(
-                cu_js.unsqueeze(0), ik_goal, plan_config.clone(), link_poses=link_poses
+                cu_js.unsqueeze(0), ik_goal, plan_config.clone(), 
+                # link_poses=link_poses
             )
             # ik_result = ik_solver.solve_single(ik_goal, cu_js.position.view(1,-1), cu_js.position.view(1,1,-1))
 

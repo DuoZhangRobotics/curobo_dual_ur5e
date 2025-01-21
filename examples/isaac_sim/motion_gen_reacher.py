@@ -365,10 +365,10 @@ def main():
                         spheres[si].set_radius(float(s.radius))
 
         robot_static = False
-        if step_index == 50 or step_index % 100 == 0.0:
-            sim_joint_forces = robot.get_measured_joint_efforts()
-            for i in range(len(sim_js_names)):
-                print(sim_js_names[i] + " : ", "position=", str(sim_js.positions[i]), " velocity=", str(sim_js.velocities[i]), " force=", str(sim_joint_forces[i]))
+        # if step_index == 50 or step_index % 100 == 0.0:
+            # sim_joint_forces = robot.get_measured_joint_efforts()
+            # for i in range(len(sim_js_names)):
+            #     print(sim_js_names[i] + " : ", "position=", str(sim_js.positions[i]), " velocity=", str(sim_js.velocities[i]), " force=", str(sim_joint_forces[i]))
         if (np.max(np.abs(sim_js.velocities)) < 0.4) or args.reactive:
             robot_static = True
         if (
@@ -418,6 +418,7 @@ def main():
                         common_js_names.append(x)
                 # idx_list = [robot.get_dof_index(x) for x in sim_js_names]
 
+                print("Common joint names: ", common_js_names)
                 cmd_plan = cmd_plan.get_ordered_joint_state(common_js_names)
 
                 cmd_idx = 0
