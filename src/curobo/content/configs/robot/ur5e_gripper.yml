@@ -17,13 +17,19 @@ robot_cfg:
     usd_flip_joints: {}
     usd_flip_joint_limits: []
 
-    urdf_path: "robot/ur_description/ur5e_robotiq_2f_140.urdf"
+    urdf_path: "robot/ur_description/ur5e_gripper.urdf"
     asset_root_path: "robot/ur_description"
 
     base_link: "base_link"
-    ee_link: "grasp_frame"
+    ee_link: "dummy_center_indicator_link"
     link_names: null
-    lock_joints: {'finger_joint': 0.0}
+    lock_joints: {'finger_joint': 0.0,
+                  'right_outer_knuckle_joint': -0.0,
+                  'left_inner_knuckle_joint': -0.0,
+                  'left_inner_finger_joint': 0.0,
+                  'right_inner_knuckle_joint': -0.0,
+                  'right_inner_finger_joint': 0.0,
+                  }
 
     extra_links: null #{"attached_object":{"parent_link_name": "grasp_frame" ,
     #"link_name": "attached_object", "fixed_transform": [0,0,0,1,0,0,0], "joint_type":"FIXED",
@@ -108,70 +114,96 @@ robot_cfg:
         - "center": [0.001, 0.001, 0.05]
           "radius": -0.01 #0.05
       robotiq_arg2f_base_link:
-        - "center": [0.0, -0.0, 0.04]
+        - "center": [0.0, -0.0, 0.06]
           "radius": 0.035
-        - "center": [0.0, -0.0, 0.02]
-          "radius": 0.035
-      left_outer_finger:
-          - "center": [0.0, -0.01, 0.0]
-            "radius": 0.01
-          - "center": [0.0, 0.015, -0.01]
-            "radius": 0.01
+        - "center": [0.0, -0.0, 0.03]
+          "radius": 0.04
 
-      left_inner_finger_pad:
-          - "center": [0.0, -0.0, 0.005]
-            "radius": 0.01
-          - "center": [0.0, 0.02, 0.005]
-            "radius": 0.01
-          - "center": [0.0, -0.02, 0.005]
-            "radius": 0.01
       left_inner_knuckle:
-          - "center": [0.0, 0.04, -0.0]
+          - "center": [0.0, 0.00, -0.0]
             "radius": 0.01
-          - "center": [0.0, 0.06, -0.0]
+          - "center": [0.0, 0.02, 0.02]
             "radius": 0.01
-          - "center": [0.0, 0.08, -0.0]
+          - "center": [0.0, 0.035, 0.035]
             "radius": 0.01
       left_inner_finger:
           - "center": [0.0, -0.0, -0.0]
-            "radius": 0.01
+            "radius": 0.008
+          - "center": [0.0, -0.012, 0.004]
+            "radius": 0.008
+          - "center": [0.0, -0.015, 0.015]
+            "radius": 0.005
+          - "center": [0.0, -0.015, 0.027]
+            "radius": 0.005
+          - "center": [0.0, -0.015, 0.04]
+            "radius": 0.005
 
+      left_outer_finger:
+          - "center": [0.0, -0.0, 0.0]
+            "radius": 0.01
+          - "center": [0.0, 0.003, 0.02]
+            "radius": 0.01
+          - "center": [0.0, 0.005, 0.04]
+            "radius": 0.01
       left_outer_knuckle:
-          - "center": [0.0, 0.055, 0.01]
-            "radius": 0.01
-          - "center": [0.0, 0.08, 0.005]
+          - "center": [0.0, 0.0, 0.0]
+            "radius": 0.008
+          - "center": [0.0, 0.015, 0.0]
+            "radius": 0.008
+          - "center": [0.0, 0.028, 0.002]
             "radius": 0.01
 
+      left_inner_finger_pad:
+          - "center": [0.0, -0.0, 0.0]
+            "radius": 0.015
+          - "center": [0.0, 0.0, 0.044]
+            "radius": 0.015
+          - "center": [0.0, 0.0, -0.044]
+            "radius": 0.015
 
       right_outer_finger:
-          - "center": [0.0, -0.01, 0.0]
+          - "center": [0.0, -0.0, 0.0]
             "radius": 0.01
-          - "center": [0.0, 0.015, -0.01]
+          - "center": [0.0, 0.003, 0.02]
             "radius": 0.01
-
-      right_inner_finger_pad:
-          - "center": [0.0, -0.0, 0.005]
-            "radius": 0.01
-          - "center": [0.0, 0.02, 0.005]
-            "radius": 0.01
-          - "center": [0.0, -0.02, 0.005]
-            "radius": 0.01
-      right_inner_knuckle:
-          - "center": [0.0, 0.04, -0.0]
-            "radius": 0.01
-          - "center": [0.0, 0.06, -0.0]
-            "radius": 0.01
-          - "center": [0.0, 0.08, -0.0]
-            "radius": 0.01
-      right_inner_finger:
-          - "center": [0.0, -0.0, -0.0]
+          - "center": [0.0, 0.005, 0.04]
             "radius": 0.01
 
       right_outer_knuckle:
-          - "center": [0.0, 0.055, 0.01]
+          - "center": [0.0, 0.0, 0.0]
+            "radius": 0.008
+          - "center": [0.0, 0.015, 0.0]
+            "radius": 0.008
+          - "center": [0.0, 0.028, 0.002]
             "radius": 0.01
-          - "center": [0.0, 0.08, 0.005]
+
+      right_inner_finger_pad:
+          - "center": [0.0, -0.0, 0.0]
+            "radius": 0.015
+          - "center": [0.0, 0.0, 0.044]
+            "radius": 0.015
+          - "center": [0.0, 0.0, -0.044]
+            "radius": 0.015
+      right_inner_knuckle:
+          - "center": [0.0, 0.00, -0.0]
             "radius": 0.01
+          - "center": [0.0, 0.02, 0.02]
+            "radius": 0.01
+          - "center": [0.0, 0.035, 0.035]
+            "radius": 0.01
+      right_inner_finger:
+          - "center": [0.0, -0.0, -0.0]
+            "radius": 0.008
+          - "center": [0.0, -0.012, 0.004]
+            "radius": 0.008
+          - "center": [0.0, -0.015, 0.015]
+            "radius": 0.005
+          - "center": [0.0, -0.015, 0.027]
+            "radius": 0.005
+          - "center": [0.0, -0.015, 0.04]
+            "radius": 0.005
+
+
 
 
     collision_sphere_buffer: 0.005
@@ -256,10 +288,24 @@ robot_cfg:
     cspace:
       joint_names: ['shoulder_pan_joint', 'shoulder_lift_joint', 'elbow_joint', 'wrist_1_joint',
                     'wrist_2_joint', 'wrist_3_joint',
-                    'finger_joint']
-      retract_config:  [0.0, -2.2, 1.0, -1.383, -1.57, 0.00, 0.6]
-      null_space_weight:  [1.0, 1.0, 1.0, 1.0, 1.0, 1.0,1.0]
-      cspace_distance_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    'finger_joint', 
+                    # mimic joints
+                    'right_outer_knuckle_joint', # symmetric to finger_joint # multiplier: -1
+                    'left_inner_knuckle_joint', # multiplier: -1
+                    'left_inner_finger_joint', # multiplier: 1
+                    'right_inner_knuckle_joint', # multiplier: -1
+                    'right_inner_finger_joint', # multiplier: 1
+                    ]
+      retract_config:  [0.0, -2.2, 1.0, -1.383, -1.57, 0.00, 
+                        0.0, # finger_joint
+                        -0.0, # right_outer_knuckle_joint
+                        -0.0, # left_inner_knuckle_joint
+                        0.0, # left_inner_finger_joint
+                        -0.0, # right_inner_knuckle_joint
+                        0.0, # right_inner_finger_joint
+                        ]
+      null_space_weight:  [1.0, 1.0, 1.0, 1.0, 1.0, 1.0,1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+      cspace_distance_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
       max_jerk: 500.0
       max_acceleration: 12.0
       position_limit_clip: 0.0

@@ -119,7 +119,7 @@
     <visual>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/visual/base.dae"/>
+        <mesh filename="meshes/ur5e/visual/base.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -128,7 +128,7 @@
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/collision/base.stl"/>
+        <mesh filename="meshes/ur5e/collision/base.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -141,7 +141,7 @@
     <visual>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/visual/shoulder.dae"/>
+        <mesh filename="meshes/ur5e/visual/shoulder.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -150,7 +150,7 @@
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/collision/shoulder.stl"/>
+        <mesh filename="meshes/ur5e/collision/shoulder.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -163,7 +163,7 @@
     <visual>
       <origin rpy="1.57079632679 0 -1.57079632679" xyz="0 0 0.138"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/visual/upperarm.dae"/>
+        <mesh filename="meshes/ur5e/visual/upperarm.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -172,7 +172,7 @@
     <collision>
       <origin rpy="1.57079632679 0 -1.57079632679" xyz="0 0 0.138"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/collision/upperarm.stl"/>
+        <mesh filename="meshes/ur5e/collision/upperarm.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -185,7 +185,7 @@
     <visual>
       <origin rpy="1.57079632679 0 -1.57079632679" xyz="0 0 0.007"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/visual/forearm.dae"/>
+        <mesh filename="meshes/ur5e/visual/forearm.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -194,7 +194,7 @@
     <collision>
       <origin rpy="1.57079632679 0 -1.57079632679" xyz="0 0 0.007"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/collision/forearm.stl"/>
+        <mesh filename="meshes/ur5e/collision/forearm.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -208,7 +208,7 @@
       <!-- TODO: Move this to a parameter -->
       <origin rpy="1.57079632679 0 0" xyz="0 0 -0.127"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/visual/wrist1.dae"/>
+        <mesh filename="meshes/ur5e/visual/wrist1.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -217,7 +217,7 @@
     <collision>
       <origin rpy="1.57079632679 0 0" xyz="0 0 -0.127"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/collision/wrist1.stl"/>
+        <mesh filename="meshes/ur5e/collision/wrist1.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -230,7 +230,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.0997"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/visual/wrist2.dae"/>
+        <mesh filename="meshes/ur5e/visual/wrist2.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -239,7 +239,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.0997"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/collision/wrist2.stl"/>
+        <mesh filename="meshes/ur5e/collision/wrist2.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -252,7 +252,7 @@
     <visual>
       <origin rpy="1.57079632679 0 0" xyz="0 0 -0.0989"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/visual/wrist3.dae"/>
+        <mesh filename="meshes/ur5e/visual/wrist3.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -261,7 +261,7 @@
     <collision>
       <origin rpy="1.57079632679 0 0" xyz="0 0 -0.0989"/>
       <geometry>
-        <mesh filename="package://ur5e/meshes/ur5e/collision/wrist3.stl"/>
+        <mesh filename="meshes/ur5e/collision/wrist3.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -524,8 +524,11 @@
         <color rgba="0.4 0.4 0.4 1"/>
       </material>
     </visual> -->
-  </link>
+  </link>ever used my cs connect email account before, and the CS help desk once said the emails should be redirected to my duo.zhang@rutgers.edu's inbox. However, I didn't get it somehow until you cc'ed my rutgers email address. 
+I'm perfectly fine with the section 2 and 3. I don't have any classes or meetings on Wednesday.
 
+Best regards,
+Duo
 
   <!-- joints: main serial chain -->
   <joint name="base_link-base_link_inertia" type="fixed">
@@ -645,7 +648,7 @@
     <axis xyz="1 0 0"/>
     <limit effort="100000" lower="0" upper="0.8757" velocity="100.2"/>
     <!-- <limit effort="1000" lower="0" upper="0.8757" velocity="1.2"/> -->
-    <mimic joint="finger_joint" multiplier="1" offset="0"/>
+    <!-- <mimic joint="finger_joint" multiplier="1" offset="0"/> -->
   </joint>
   <joint name="left_inner_finger_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0 0.0061 0.0471"/>
@@ -654,7 +657,7 @@
     <axis xyz="1 0 0"/>
     <limit effort="100000" lower="-0.8757" upper="0" velocity="100.2"/>
     <!-- <limit effort="1000" lower="-0.8757" upper="0" velocity="1.2"/> -->
-    <mimic joint="finger_joint" multiplier="-1" offset="0"/>
+    <!-- <mimic joint="finger_joint" multiplier="-1" offset="0"/> -->
   </joint>
   <joint name="left_inner_finger_pad_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 -0.0190203446692936 0.03867"/>
@@ -669,7 +672,7 @@
     <axis xyz="1 0 0"/>
     <limit effort="100000" lower="0" upper="0.81" velocity="100.2"/>
     <!-- <limit effort="1000" lower="0" upper="0.81" velocity="1.2"/> -->
-    <mimic joint="finger_joint" multiplier="1" offset="0"/>
+    <!-- <mimic joint="finger_joint" multiplier="1" offset="0"/> -->
   </joint>
   <joint name="right_outer_finger_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0.0315 -0.0041"/>
@@ -684,7 +687,7 @@
     <axis xyz="1 0 0"/>
     <limit effort="100000" lower="0" upper="0.8757" velocity="100.2"/>
     <!-- <limit effort="1000" lower="0" upper="0.8757" velocity="1.2"/> -->
-    <mimic joint="finger_joint" multiplier="1" offset="0"/>
+    <!-- <mimic joint="finger_joint" multiplier="1" offset="0"/> -->
   </joint>
   <joint name="right_inner_finger_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0 0.0061 0.0471"/>
@@ -693,7 +696,7 @@
     <axis xyz="1 0 0"/>
     <limit effort="100000" lower="-0.8757" upper="0" velocity="100.2"/>
     <!-- <limit effort="1000" lower="-0.8757" upper="0" velocity="1.2"/> -->
-    <mimic joint="finger_joint" multiplier="-1" offset="0"/>
+    <!-- <mimic joint="finger_joint" multiplier="-1" offset="0"/> -->
   </joint>
   <joint name="right_inner_finger_pad_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 -0.0190203446692936 0.03867"/>

@@ -24,12 +24,12 @@ robot_cfg:
     base_link: "base_link"
     ee_link: "grasp_frame"
     link_names: null
-    lock_joints: {'finger_joint': 0.6,
-                  'right_outer_knuckle_joint': -0.6,
-                  'left_inner_knuckle_joint': -0.6,
-                  'left_inner_finger_joint': 0.6,
-                  'right_inner_knuckle_joint': -0.6,
-                  'right_inner_finger_joint': 0.6,
+    lock_joints: {'finger_joint': 0.0,
+                  'right_outer_knuckle_joint': -0.0,
+                  'left_inner_knuckle_joint': -0.0,
+                  'left_inner_finger_joint': 0.0,
+                  'right_inner_knuckle_joint': -0.0,
+                  'right_inner_finger_joint': 0.0,
                   }
 
     extra_links: null #{"attached_object":{"parent_link_name": "grasp_frame" ,
@@ -274,12 +274,12 @@ robot_cfg:
                     'right_inner_finger_joint', # multiplier: 1
                     ]
       retract_config:  [0.0, -2.2, 1.0, -1.383, -1.57, 0.00, 
-                        0.6, # finger_joint
-                        -0.6, # right_outer_knuckle_joint
-                        -0.6, # left_inner_knuckle_joint
-                        0.6, # left_inner_finger_joint
-                        -0.6, # right_inner_knuckle_joint
-                        0.6, # right_inner_finger_joint
+                        0.0, # finger_joint
+                        -0.0, # right_outer_knuckle_joint
+                        -0.0, # left_inner_knuckle_joint
+                        0.0, # left_inner_finger_joint
+                        -0.0, # right_inner_knuckle_joint
+                        0.0, # right_inner_finger_joint
                         ]
       null_space_weight:  [1.0, 1.0, 1.0, 1.0, 1.0, 1.0,1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
       cspace_distance_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
