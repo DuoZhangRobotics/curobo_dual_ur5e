@@ -19,10 +19,11 @@ robot_cfg:
     usd_path: ""
     base_link: "base_fixture_link"
     ee_link: "dummy_center_indicator_link"
-    link_names: [ "tool1", "dummy_center_indicator_link"] 
+    link_names: [ "dummy_center_indicator_link_1", "dummy_center_indicator_link"] 
     collision_link_names: [
       'shoulder_link','upper_arm_link', 'forearm_link', 'wrist_1_link', 'wrist_2_link' ,'wrist_3_link', 'tool0',
       'shoulder_link_1','upper_arm_link_1', 'forearm_link_1', 'wrist_1_link_1', 'wrist_2_link_1' ,'wrist_3_link_1', 'tool1',
+      # hand 1
       'robotiq_arg2f_base_link',
       'left_outer_knuckle',
       'left_inner_knuckle',
@@ -34,6 +35,18 @@ robot_cfg:
       'right_outer_finger' ,
       'right_inner_finger',
       'right_inner_finger_pad',
+      # hand 2
+      'robotiq_arg2f_base_link_1',
+      'left_outer_knuckle_1',
+      'left_inner_knuckle_1',
+      'left_outer_finger_1',
+      'left_inner_finger_1',
+      'left_inner_finger_pad_1',
+      'right_outer_knuckle_1',
+      'right_inner_knuckle_1',
+      'right_outer_finger_1' ,
+      'right_inner_finger_1',
+      'right_inner_finger_pad_1',
       ]
     collision_spheres: 'spheres/dual_ur5e_gripper.yml'
     collision_sphere_buffer: 0.0
@@ -108,10 +121,52 @@ robot_cfg:
       "shoulder_link_1": ['upper_arm_link_1'],
       "upper_arm_link_1": ['forearm_link_1'],
       "forearm_link_1": ['wrist_1_link_1', 'wrist_2_link_1' ,'wrist_3_link_1'],
-      "wrist_1_link_1": ['wrist_2_link_1' ,'wrist_3_link_1'],
-      "wrist_2_link_1": [ 'wrist_3_link_1'],
-      "wrist_3_link_1": [ 'tool1'],
+      "wrist_1_link_1": ['wrist_2_link_1' ,'wrist_3_link_1', 'tool1', 'robotiq_arg2f_base_link_1'],
+      "wrist_2_link_1": [ 'wrist_3_link_1', 'tool1', 'robotiq_arg2f_base_link_1'],
+      "wrist_3_link_1": [ 'tool1', 'robotiq_arg2f_base_link_1'],
 
+      "tool1": ['robotiq_arg2f_base_link_1', 'left_outer_finger_1', 'left_inner_finger_pad_1',
+      'left_inner_knuckle_1', 'left_inner_finger_1', 'left_outer_knuckle_1',
+      'right_outer_finger_1', 'right_inner_finger_pad_1',
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1'],
+  
+      "robotiq_arg2f_base_link_1": ['left_outer_finger_1', 'left_inner_finger_pad_1',   
+      'left_inner_knuckle_1', 'left_inner_finger_1', 'left_outer_knuckle_1',
+      'right_outer_finger_1', 'right_inner_finger_pad_1',
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1'],
+
+      "left_outer_finger_1": ['left_inner_finger_pad_1',
+      'left_inner_knuckle_1', 'left_inner_finger_1', 'left_outer_knuckle_1',
+      'right_outer_finger_1', 'right_inner_finger_pad_1',
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1'],
+
+      "left_inner_finger_pad_1": [
+      'left_inner_knuckle_1', 'left_inner_finger_1', 'left_outer_knuckle_1',
+      'right_outer_finger_1', 'right_inner_finger_pad_1',
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1'],
+      
+      "left_inner_knuckle_1": ['left_inner_finger_1', 'left_outer_knuckle_1',
+      'right_outer_finger_1', 'right_inner_finger_pad_1',
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1'],
+
+      "left_inner_finger_1": ['left_outer_knuckle_1',
+      'right_outer_finger_1', 'right_inner_finger_pad_1',
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1'],
+
+      "left_outer_knuckle_1": [
+      'right_outer_finger_1', 'right_inner_finger_pad_1',
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1'],
+
+      "right_outer_finger_1": ['right_inner_finger_pad_1',
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1'],
+
+      "right_inner_finger_pad_1": [
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1'],
+
+      "right_inner_knuckle_1": [ 'right_inner_finger_1', 'right_outer_knuckle_1'],
+
+      "right_inner_finger_1": [ 'right_outer_knuckle_1'],
+      
       }
     self_collision_buffer: {
       'shoulder_link': 0.05,
@@ -123,6 +178,12 @@ robot_cfg:
                   'left_inner_finger_joint': 0.0,
                   'right_inner_knuckle_joint': -0.0,
                   'right_inner_finger_joint': 0.0,
+                  'finger_joint_1': 0.0,
+                  'right_outer_knuckle_joint_1': -0.0,
+                  'left_inner_knuckle_joint_1': -0.0,
+                  'left_inner_finger_joint_1': 0.0,
+                  'right_inner_knuckle_joint_1': -0.0,
+                  'right_inner_finger_joint_1': 0.0,
                   }
 
     cspace:
@@ -135,7 +196,16 @@ robot_cfg:
         'left_inner_finger_joint', # multiplier: 1
         'right_inner_knuckle_joint', # multiplier: -1
         'right_inner_finger_joint', # multiplier: 1
-        'shoulder_pan_joint_1', 'shoulder_lift_joint_1', 'elbow_joint_1', 'wrist_1_joint_1', 'wrist_2_joint_1', 'wrist_3_joint_1']
+        
+        'shoulder_pan_joint_1', 'shoulder_lift_joint_1', 'elbow_joint_1', 'wrist_1_joint_1', 'wrist_2_joint_1', 'wrist_3_joint_1',
+        'finger_joint_1',
+        # mimic joints
+        'right_outer_knuckle_joint_1', # symmetric to finger_joint # multiplier: -1
+        'left_inner_knuckle_joint_1', # multiplier: -1
+        'left_inner_finger_joint_1', # multiplier: 1
+        'right_inner_knuckle_joint_1', # multiplier: -1
+        'right_inner_finger_joint_1', # multiplier: 1
+        ]
       retract_config: [0, -2.2, 1.9, -1.383, -1.57, 0.00, 
                         0.0, # finger_joint
                         -0.0, # right_outer_knuckle_joint
@@ -143,15 +213,28 @@ robot_cfg:
                         0.0, # left_inner_finger_joint
                         -0.0, # right_inner_knuckle_joint
                         0.0, # right_inner_finger_joint
-                      -3.14, -2.2, 1.9, -1.383, -1.57, 0.00]
+                      -3.14, -2.2, 1.9, -1.383, -1.57, 0.00,
+                        0.0, # finger_joint
+                        -0.0, # right_outer_knuckle_joint
+                        -0.0, # left_inner_knuckle_joint
+                        0.0, # left_inner_finger_joint
+                        -0.0, # right_inner_knuckle_joint
+                        0.0, # right_inner_finger_joint
+                      ]
       null_space_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 
                           # mimic joints
                           1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
-                          1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                          1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+                          # mimic joints
+                          1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+                          ]
       cspace_distance_weight: [0.5, 0.5, 0.5, 1.0, 1.0, 1.0,
                             # mimic joints
                             1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
-                              0.5, 0.5, 0.5, 1.0, 1.0, 1.0]
+                              0.5, 0.5, 0.5, 1.0, 1.0, 1.0,
+                            # mimic joints
+                            1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+                              ]
                               
       max_jerk: 500.0
       max_acceleration: 15.0
