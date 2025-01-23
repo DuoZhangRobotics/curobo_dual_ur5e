@@ -304,12 +304,17 @@ def main():
             # Set EE teleop goals, use cube for simple non-vr init:
             ee_translation_goal = cube_position
             ee_orientation_teleop_goal = cube_orientation
-            print("ee_orientation_teleop_goal" + str(ee_orientation_teleop_goal))
 
+            c_p = [0, 0.3, 0.3]
+            c_rot = np.array([0, -0.707, 0.707, 0])
             # compute curobo solution:
             ik_goal = Pose(
                 position=tensor_args.to_device(ee_translation_goal),
                 quaternion=tensor_args.to_device(ee_orientation_teleop_goal),
+            )
+            ik_goal = Pose(
+                position=tensor_args.to_device(c_p),
+                quaternion=tensor_args.to_device(c_rot),
             )
 
             ####################
@@ -324,6 +329,8 @@ def main():
             link_poses = {}
             for i in target_links.keys():
                 c_p, c_rot = target_links[i].get_world_pose()
+                c_p = [0, -0.3, 0.3]
+                c_rot = np.array([0, -0.707, 0.707, 0])
                 link_poses[i] = Pose(
                     position=tensor_args.to_device(c_p),
                     quaternion=tensor_args.to_device(c_rot),
