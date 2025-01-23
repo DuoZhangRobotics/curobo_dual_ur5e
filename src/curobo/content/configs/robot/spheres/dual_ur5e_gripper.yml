@@ -180,11 +180,11 @@ collision_spheres:
 
   left_inner_finger_pad:
       - "center": [0.0, -0.0, 0.0]
-        "radius": 0.015
+        "radius": 0.01
       - "center": [0.0, 0.0, 0.044]
-        "radius": 0.015
+        "radius": 0.01
       - "center": [0.0, 0.0, -0.044]
-        "radius": 0.015
+        "radius": 0.01
 
   right_outer_finger:
       - "center": [0.0, -0.0, 0.0]
@@ -204,11 +204,11 @@ collision_spheres:
 
   right_inner_finger_pad:
       - "center": [0.0, -0.0, 0.0]
-        "radius": 0.015
+        "radius": 0.01
       - "center": [0.0, 0.0, 0.044]
-        "radius": 0.015
+        "radius": 0.01
       - "center": [0.0, 0.0, -0.044]
-        "radius": 0.015
+        "radius": 0.01
   right_inner_knuckle:
       - "center": [0.0, 0.00, -0.0]
         "radius": 0.01

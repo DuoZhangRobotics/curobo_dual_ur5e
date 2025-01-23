@@ -206,7 +206,8 @@ robot_cfg:
 
 
 
-    collision_sphere_buffer: 0.005
+    # collision_sphere_buffer: 0.005
+    collision_sphere_buffer: 0.0
 
     self_collision_ignore: {
       "upper_arm_link": ["forearm_link", "shoulder_link"],
