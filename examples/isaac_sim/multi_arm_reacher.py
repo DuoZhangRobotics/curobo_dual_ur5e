@@ -330,7 +330,7 @@ def main():
                 )
             result = motion_gen.plan_single(
                 cu_js.unsqueeze(0), ik_goal, plan_config.clone(), 
-                # link_poses=link_poses
+                link_poses=link_poses
             )
             # ik_result = ik_solver.solve_single(ik_goal, cu_js.position.view(1,-1), cu_js.position.view(1,1,-1))
 
