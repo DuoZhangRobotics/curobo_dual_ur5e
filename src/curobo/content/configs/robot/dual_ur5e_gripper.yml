@@ -51,7 +51,6 @@ robot_cfg:
     collision_spheres: 'spheres/dual_ur5e_gripper.yml'
     collision_sphere_buffer: 0.0
 
-
     self_collision_ignore: {
       # "upper_arm_link": ["shoulder_link","forearm_link"],
       # "forarm_link": ["wrist_1_link"],
@@ -172,8 +171,8 @@ robot_cfg:
       'shoulder_link': 0.05,
       'shoulder_link_1': 0.05,
        }
-    lock_joints: {'finger_joint': 0.0,
-                  'right_outer_knuckle_joint': -0.0,
+    lock_joints: {'finger_joint': 0.0,      
+                 'right_outer_knuckle_joint': -0.0,
                   'left_inner_knuckle_joint': -0.0,
                   'left_inner_finger_joint': 0.0,
                   'right_inner_knuckle_joint': -0.0,
@@ -192,19 +191,19 @@ robot_cfg:
         'finger_joint', 
         # mimic joints
         'right_outer_knuckle_joint', # symmetric to finger_joint # multiplier: -1
-        'left_inner_knuckle_joint', # multiplier: -1
-        'left_inner_finger_joint', # multiplier: 1
-        'right_inner_knuckle_joint', # multiplier: -1
-        'right_inner_finger_joint', # multiplier: 1
+        'left_inner_knuckle_joint', # multiplier: 1
+        'left_inner_finger_joint', # multiplier: -1
+        'right_inner_knuckle_joint', # multiplier: 1
+        'right_inner_finger_joint', # multiplier: -1
         
         'shoulder_pan_joint_1', 'shoulder_lift_joint_1', 'elbow_joint_1', 'wrist_1_joint_1', 'wrist_2_joint_1', 'wrist_3_joint_1',
         'finger_joint_1',
         # mimic joints
         'right_outer_knuckle_joint_1', # symmetric to finger_joint # multiplier: -1
-        'left_inner_knuckle_joint_1', # multiplier: -1
-        'left_inner_finger_joint_1', # multiplier: 1
-        'right_inner_knuckle_joint_1', # multiplier: -1
-        'right_inner_finger_joint_1', # multiplier: 1
+        'left_inner_knuckle_joint_1', # multiplier: 1
+        'left_inner_finger_joint_1', # multiplier: -1
+        'right_inner_knuckle_joint_1', # multiplier: 1
+        'right_inner_finger_joint_1', # multiplier: -1
         ]
       retract_config: [0, -2.2, 1.9, -1.383, -1.57, 0.00, 
                         0.0, # finger_joint

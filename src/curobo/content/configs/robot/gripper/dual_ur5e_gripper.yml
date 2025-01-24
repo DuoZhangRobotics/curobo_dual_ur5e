@@ -1,0 +1,18 @@
+gripper_cfg:
+  gripper_joint_names: [
+    'finger_joint', 
+    # mimic joints
+    'right_outer_knuckle_joint', # symmetric to finger_joint # multiplier: 1
+    'left_inner_knuckle_joint', # multiplier: 1
+    'left_inner_finger_joint', # multiplier: -1
+    'right_inner_knuckle_joint', # multiplier: 1
+    'right_inner_finger_joint', # multiplier: -1
+    'finger_joint_1',
+    # mimic joints
+    'right_outer_knuckle_joint_1', # symmetric to finger_joint # multiplier: 1
+    'left_inner_knuckle_joint_1', # multiplier: 1
+    'left_inner_finger_joint_1', # multiplier: -1
+    'right_inner_knuckle_joint_1', # multiplier: 1
+    'right_inner_finger_joint_1', # multiplier: -1
+  ]
+  multiplier: [1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1]
