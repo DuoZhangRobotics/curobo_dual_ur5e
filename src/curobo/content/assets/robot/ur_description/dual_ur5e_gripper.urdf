@@ -829,7 +829,7 @@
     <child link="left_outer_knuckle"/>
     <axis xyz="1 0 0"/>
     <!-- TODO: changed velocity to make grasping realistic -->
-    <limit effort="5" lower="0" upper="0.8" velocity="100.2"/>
+    <limit effort="1000" lower="0" upper="0.8" velocity="100.2"/>
     <!-- <limit effort="1000" lower="0" upper="0.8" velocity="1.2"/> -->
   </joint>
   <joint name="left_outer_finger_joint" type="fixed">
@@ -849,7 +849,7 @@
     <parent link="robotiq_arg2f_base_link"/>
     <child link="left_inner_knuckle"/>
     <axis xyz="1 0 0"/>
-    <limit effort="5" lower="0" upper="0.8" velocity="100.2"/>
+    <limit effort="1000" lower="0" upper="0.8" velocity="100.2"/>
     <!-- <limit effort="1000" lower="0" upper="0.8" velocity="1.2"/> -->
     <mimic joint="finger_joint" multiplier="1" offset="0"/>
   </joint>
@@ -858,7 +858,7 @@
     <parent link="left_outer_finger"/>
     <child link="left_inner_finger"/>
     <axis xyz="1 0 0"/>
-    <limit effort="5" lower="-0.8" upper="0" velocity="100.2"/>
+    <limit effort="1000" lower="-0.8" upper="0" velocity="100.2"/>
     <!-- <limit effort="1000" lower="-0.8" upper="0" velocity="1.2"/> -->
     <mimic joint="finger_joint" multiplier="-1" offset="0"/>
   </joint>
@@ -873,7 +873,7 @@
     <parent link="robotiq_arg2f_base_link"/>
     <child link="right_outer_knuckle"/>
     <axis xyz="1 0 0"/>
-    <limit effort="5" lower="0" upper="0.8" velocity="100.2"/>
+    <limit effort="1000" lower="0" upper="0.8" velocity="100.2"/>
     <!-- <limit effort="1000" lower="0" upper="0.81" velocity="1.2"/> -->
     <mimic joint="finger_joint" multiplier="1" offset="0"/>
   </joint>
@@ -888,7 +888,7 @@
     <parent link="robotiq_arg2f_base_link"/>
     <child link="right_inner_knuckle"/>
     <axis xyz="1 0 0"/>
-    <limit effort="5" lower="0" upper="0.8" velocity="100.2"/>
+    <limit effort="1000" lower="0" upper="0.8" velocity="100.2"/>
     <!-- <limit effort="1000" lower="0" upper="0.8" velocity="1.2"/> -->
     <mimic joint="finger_joint" multiplier="1" offset="0"/>
   </joint>
@@ -903,7 +903,7 @@
     <parent link="right_outer_finger"/>
     <child link="right_inner_finger"/>
     <axis xyz="1 0 0"/>
-    <limit effort="5" lower="-0.8" upper="0" velocity="100.2"/>
+    <limit effort="1000" lower="-0.8" upper="0" velocity="100.2"/>
     <!-- <limit effort="1000" lower="-0.8" upper="0" velocity="1.2"/> -->
     <mimic joint="finger_joint" multiplier="-1" offset="0"/>
   </joint>
@@ -1189,7 +1189,7 @@
     <child link="left_outer_knuckle_1"/>
     <axis xyz="1 0 0"/>
     <!-- TODO: changed velocity to make grasping realistic -->
-    <limit effort="5" lower="0" upper="0.8" velocity="100.2"/>
+    <limit effort="1000" lower="0" upper="0.8" velocity="100.2"/>
     <!-- <limit effort="1000" lower="0" upper="0.8" velocity="1.2"/> -->
   </joint>
   <joint name="left_outer_finger_joint_1" type="fixed">
@@ -1203,7 +1203,7 @@
     <parent link="robotiq_arg2f_base_link_1"/>
     <child link="left_inner_knuckle_1"/>
     <axis xyz="1 0 0"/>
-    <limit effort="5" lower="0" upper="0.8" velocity="100.2"/>
+    <limit effort="1000" lower="0" upper="0.8" velocity="100.2"/>
     <!-- <limit effort="1000" lower="0" upper="0.8" velocity="1.2"/> -->
     <mimic joint="finger_joint_1" multiplier="1" offset="0"/>
   </joint>
@@ -1212,7 +1212,7 @@
     <parent link="left_outer_finger_1"/>
     <child link="left_inner_finger_1"/>
     <axis xyz="1 0 0"/>
-    <limit effort="5" lower="-0.8" upper="0" velocity="100.2"/>
+    <limit effort="1000" lower="-0.8" upper="0" velocity="100.2"/>
     <!-- <limit effort="1000" lower="-0.8" upper="0" velocity="1.2"/> -->
     <mimic joint="finger_joint_1" multiplier="-1" offset="0"/>
   </joint>
@@ -1227,7 +1227,7 @@
     <parent link="robotiq_arg2f_base_link_1"/>
     <child link="right_outer_knuckle_1"/>
     <axis xyz="1 0 0"/>
-    <limit effort="5" lower="0" upper="0.8" velocity="100.2"/>
+    <limit effort="1000" lower="0" upper="0.8" velocity="100.2"/>
     <!-- <limit effort="1000" lower="0" upper="0.81" velocity="1.2"/> -->
     <mimic joint="finger_joint_1" multiplier="1" offset="0"/>
   </joint>
@@ -1242,7 +1242,7 @@
     <parent link="robotiq_arg2f_base_link_1"/>
     <child link="right_inner_knuckle_1"/>
     <axis xyz="1 0 0"/>
-    <limit effort="5" lower="0" upper="0.8" velocity="100.2"/>
+    <limit effort="1000" lower="0" upper="0.8" velocity="100.2"/>
     <!-- <limit effort="1000" lower="0" upper="0.8" velocity="1.2"/> -->
     <mimic joint="finger_joint_1" multiplier="1" offset="0"/>
   </joint>
@@ -1251,7 +1251,7 @@
     <parent link="right_outer_finger_1"/>
     <child link="right_inner_finger_1"/>
     <axis xyz="1 0 0"/>
-    <limit effort="5" lower="-0.8" upper="0" velocity="100.2"/>
+    <limit effort="1000" lower="-0.8" upper="0" velocity="100.2"/>
     <!-- <limit effort="1000" lower="-0.8" upper="0" velocity="1.2"/> -->
     <mimic joint="finger_joint_1" multiplier="-1" offset="0"/>
   </joint>
