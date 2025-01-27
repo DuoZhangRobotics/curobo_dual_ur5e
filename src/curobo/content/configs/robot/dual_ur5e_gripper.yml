@@ -15,7 +15,8 @@ robot_cfg:
     urdf_path: "robot/ur_description/dual_ur5e_gripper.urdf"
     asset_root_path: ""
     isaac_usd_path: ""
-    usd_robot_root: "/ur5"
+    usd_robot_root: "/ur5e_robot"
+    # usd_path: "robot/ur_description/dual_ur5e_gripper.usda"
     usd_path: ""
     base_link: "base_fixture_link"
     ee_link: "dummy_center_indicator_link"
@@ -172,17 +173,17 @@ robot_cfg:
       'shoulder_link_1': 0.05,
        }
     lock_joints: {'finger_joint': 0.0,      
-                 'right_outer_knuckle_joint': -0.0,
-                  'left_inner_knuckle_joint': -0.0,
-                  'left_inner_finger_joint': 0.0,
-                  'right_inner_knuckle_joint': -0.0,
-                  'right_inner_finger_joint': 0.0,
+                #  'right_outer_knuckle_joint': -0.0,
+                #   'left_inner_knuckle_joint': -0.0,
+                #   'left_inner_finger_joint': 0.0,
+                #   'right_inner_knuckle_joint': -0.0,
+                #   'right_inner_finger_joint': 0.0,
                   'finger_joint_1': 0.0,
-                  'right_outer_knuckle_joint_1': -0.0,
-                  'left_inner_knuckle_joint_1': -0.0,
-                  'left_inner_finger_joint_1': 0.0,
-                  'right_inner_knuckle_joint_1': -0.0,
-                  'right_inner_finger_joint_1': 0.0,
+                  # 'right_outer_knuckle_joint_1': -0.0,
+                  # 'left_inner_knuckle_joint_1': -0.0,
+                  # 'left_inner_finger_joint_1': 0.0,
+                  # 'right_inner_knuckle_joint_1': -0.0,
+                  # 'right_inner_finger_joint_1': 0.0,
                   }
 
     cspace:
@@ -221,18 +222,25 @@ robot_cfg:
                         0.0, # right_inner_finger_joint
                       ]
       null_space_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 
+                          # finger joint
+                          1.0, 
                           # mimic joints
+                          1.0, 1.0, 1.0, 1.0, 1.0,
                           1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
-                          1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+                          # finger joint_1
+                          1.0, 
                           # mimic joints
-                          1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+                          1.0, 1.0, 1.0, 1.0, 1.0
                           ]
       cspace_distance_weight: [0.5, 0.5, 0.5, 1.0, 1.0, 1.0,
+                            # finger joint
+                            1.0, 
                             # mimic joints
-                            1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+                            1.0, 1.0, 1.0, 1.0, 1.0,
                               0.5, 0.5, 0.5, 1.0, 1.0, 1.0,
+                            1.0, 
                             # mimic joints
-                            1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+                            1.0, 1.0, 1.0, 1.0, 1.0,
                               ]
                               
       max_jerk: 500.0
