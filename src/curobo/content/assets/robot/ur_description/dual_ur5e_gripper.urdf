@@ -258,8 +258,8 @@
     <child link="shoulder_link"/>
     <origin rpy="0 0 0" xyz="0 0 0.1625"/>
     <axis xyz="0 0 1"/>
-    <limit effort="150.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/>
-    <!-- <limit effort="150.0" lower="-1.57" upper="1.57" velocity="3.141592653589793"/> -->
+    <!-- <limit effort="150.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/> -->
+    <limit effort="150.0" lower="-1.57" upper="1.57" velocity="3.141592653589793"/>
     <dynamics damping="0" friction="0"/>
   </joint>
   <joint name="shoulder_lift_joint" type="revolute">
@@ -267,7 +267,8 @@
     <child link="upper_arm_link"/>
     <origin rpy="1.570796327 0 0" xyz="0 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="150.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/>
+    <!-- <limit effort="150.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/> -->
+    <limit effort="150.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="3.141592653589793"/>
     <dynamics damping="0" friction="0"/>
   </joint>
   <joint name="elbow_joint" type="revolute">
@@ -283,7 +284,8 @@
     <child link="wrist_1_link"/>
     <origin rpy="0 0 0" xyz="-0.3922 0 0.1333"/>
     <axis xyz="0 0 1"/>
-    <limit effort="28.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/>
+    <!-- <limit effort="28.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/> -->
+    <limit effort="150.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="3.141592653589793"/>
     <dynamics damping="0" friction="0"/>
   </joint>
   <joint name="wrist_2_joint" type="revolute">
@@ -291,7 +293,8 @@
     <child link="wrist_2_link"/>
     <origin rpy="1.570796327 0 0" xyz="0 -0.0997 -2.044881182297852e-11"/>
     <axis xyz="0 0 1"/>
-    <limit effort="28.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/>
+    <!-- <limit effort="28.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/> -->
+    <limit effort="150.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="3.141592653589793"/>
     <dynamics damping="0" friction="0"/>
   </joint>
   <joint name="wrist_3_joint" type="revolute">
@@ -299,7 +302,8 @@
     <child link="wrist_3_link"/>
     <origin rpy="1.570796326589793 3.141592653589793 3.141592653589793" xyz="0 0.0996 -2.042830148012698e-11"/>
     <axis xyz="0 0 1"/>
-    <limit effort="28.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/>
+    <!-- <limit effort="28.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/> -->
+    <limit effort="150.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="3.141592653589793"/>
     <dynamics damping="0" friction="0"/>
   </joint>
   <!-- ROS-Industrial 'base' frame: base_link to UR 'Base' Coordinates transform -->
@@ -495,15 +499,17 @@
            Use the joint between 'base_link' and 'base_link_inertia' (a dummy
            link/frame) to introduce the necessary rotation over Z (of pi rad).
       -->
-    <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/>
+    <!-- <origin rpy="0 0 3.141592653589793" xyz="0 0 0"/> -->
+    <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
   <joint name="shoulder_pan_joint_1" type="revolute">
     <parent link="base_link_inertia_1"/>
     <child link="shoulder_link_1"/>
     <origin rpy="0 0 0" xyz="0 0 0.1625"/>
     <axis xyz="0 0 1"/>
-    <limit effort="150.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/>
+    <!-- <limit effort="150.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/> -->
     <!-- <limit effort="150.0" lower="-4.71" upper="-1.57" velocity="3.141592653589793"/> -->
+    <limit effort="150.0" lower="-1.57" upper="1.57" velocity="3.141592653589793"/>
     <dynamics damping="0" friction="0"/>
   </joint>
   <joint name="shoulder_lift_joint_1" type="revolute">
@@ -511,7 +517,8 @@
     <child link="upper_arm_link_1"/>
     <origin rpy="1.570796327 0 0" xyz="0 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="150.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/>
+    <!-- <limit effort="150.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/> -->
+    <limit effort="150.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="3.141592653589793"/>
     <dynamics damping="0" friction="0"/>
   </joint>
   <joint name="elbow_joint_1" type="revolute">
@@ -527,7 +534,8 @@
     <child link="wrist_1_link_1"/>
     <origin rpy="0 0 0" xyz="-0.3922 0 0.1333"/>
     <axis xyz="0 0 1"/>
-    <limit effort="28.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/>
+    <!-- <limit effort="28.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/> -->
+    <limit effort="150.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="3.141592653589793"/>
     <dynamics damping="0" friction="0"/>
   </joint>
   <joint name="wrist_2_joint_1" type="revolute">
@@ -535,7 +543,8 @@
     <child link="wrist_2_link_1"/>
     <origin rpy="1.570796327 0 0" xyz="0 -0.0997 -2.044881182297852e-11"/>
     <axis xyz="0 0 1"/>
-    <limit effort="28.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/>
+    <!-- <limit effort="28.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/> -->
+    <limit effort="150.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="3.141592653589793"/>
     <dynamics damping="0" friction="0"/>
   </joint>
   <joint name="wrist_3_joint_1" type="revolute">
@@ -543,7 +552,8 @@
     <child link="wrist_3_link_1"/>
     <origin rpy="1.570796326589793 3.141592653589793 3.141592653589793" xyz="0 0.0996 -2.042830148012698e-11"/>
     <axis xyz="0 0 1"/>
-    <limit effort="28.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/>
+    <!-- <limit effort="28.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/> -->
+    <limit effort="150.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="3.141592653589793"/>
     <dynamics damping="0" friction="0"/>
   </joint>
 
