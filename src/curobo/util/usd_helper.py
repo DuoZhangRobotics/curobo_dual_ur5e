@@ -532,28 +532,29 @@ class UsdHelper:
         obstacles_frame: str = "obstacles",
         base_t_obstacle_pose: Optional[Pose] = None,
         timestep: Optional[float] = None,
+        enable_physics: bool = False,
     ):
         # iterate through every obstacle type and create prims:
 
         self.add_subroot(base_frame, obstacles_frame, base_t_obstacle_pose)
         full_path = join_path(base_frame, obstacles_frame)
         prim_path = [
-            self.get_prim_from_obstacle(o, full_path, timestep=timestep) for o in obstacles.objects
+            self.get_prim_from_obstacle(o, full_path, timestep=timestep, enable_physics=enable_physics) for o in obstacles.objects
         ]
         return prim_path
 
     def get_prim_from_obstacle(
-        self, obstacle: Obstacle, base_frame: str = "/world/obstacles", timestep=None
+        self, obstacle: Obstacle, base_frame: str = "/world/obstacles", timestep=None, enable_physics=False
     ):
-
+        print("Adding obstacle, enable_physics", enable_physics)
         if isinstance(obstacle, Cuboid):
-            return self.add_cuboid_to_stage(obstacle, base_frame, timestep=timestep)
+            return self.add_cuboid_to_stage(obstacle, base_frame, timestep=timestep, enable_physics=enable_physics)
         elif isinstance(obstacle, Mesh):
-            return self.add_mesh_to_stage(obstacle, base_frame, timestep=timestep)
+            return self.add_mesh_to_stage(obstacle, base_frame, timestep=timestep, enable_physics=enable_physics)
         elif isinstance(obstacle, Sphere):
-            return self.add_sphere_to_stage(obstacle, base_frame, timestep=timestep)
+            return self.add_sphere_to_stage(obstacle, base_frame, timestep=timestep, enable_physics=enable_physics)
         elif isinstance(obstacle, Cylinder):
-            return self.add_cylinder_to_stage(obstacle, base_frame, timestep=timestep)
+            return self.add_cylinder_to_stage(obstacle, base_frame, timestep=timestep, enable_physics=enable_physics)
 
         else:
             raise NotImplementedError
