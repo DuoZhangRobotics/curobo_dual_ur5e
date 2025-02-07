@@ -485,9 +485,9 @@ def demo_motion_gen_batch_env(n_envs: int = 10):
 
 if __name__ == "__main__":
     setup_curobo_logger("error")
-    demo_motion_gen(js=True)
+    # demo_motion_gen(js=False)
     # demo_motion_gen_simple()
-    # demo_motion_gen_batch()
+    demo_motion_gen_batch()
     # demo_motion_gen_goalset()
     # n = [2, 10]
     # for n_envs in n:
