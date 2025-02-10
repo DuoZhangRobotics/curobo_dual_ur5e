@@ -235,4 +235,4 @@ robot_cfg:
                               ]
                               
       max_jerk: 500.0
-      max_acceleration: 15.0
+      max_acceleration: 40.0
