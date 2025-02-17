@@ -577,7 +577,7 @@ class CudaRobotModel(CudaRobotModelConfig):
 
         return m_list
 
-    def get_robot_as_spheres(self, q: torch.Tensor, filter_valid: bool = True) -> List[Sphere]:
+    def get_robot_as_spheres(self, q: torch.Tensor, link_names=None, filter_valid: bool = True) -> List[Sphere]:
         """Get robot spheres using forward kinematics on given joint configuration q.
 
         Args:
@@ -587,7 +587,7 @@ class CudaRobotModel(CudaRobotModelConfig):
         Returns:
             List[Sphere]: List of all robot spheres.
         """
-        state = self.get_state(q)
+        state = self.get_state(q, link_names)
 
         # state has sphere position and radius
 

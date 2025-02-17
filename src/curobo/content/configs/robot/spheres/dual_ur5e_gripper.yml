@@ -181,9 +181,9 @@ collision_spheres:
   left_inner_finger_pad:
       - "center": [0.0, -0.0, 0.0]
         "radius": 0.01
-      - "center": [0.0, 0.0, 0.044]
+      - "center": [0.0, 0.0, 0.029]
         "radius": 0.01
-      - "center": [0.0, 0.0, -0.044]
+      - "center": [0.0, 0.0, -0.029]
         "radius": 0.01
 
   right_outer_finger:
@@ -205,9 +205,9 @@ collision_spheres:
   right_inner_finger_pad:
       - "center": [0.0, -0.0, 0.0]
         "radius": 0.01
-      - "center": [0.0, 0.0, 0.044]
+      - "center": [0.0, 0.0, 0.029]
         "radius": 0.01
-      - "center": [0.0, 0.0, -0.044]
+      - "center": [0.0, 0.0, -0.029]
         "radius": 0.01
   right_inner_knuckle:
       - "center": [0.0, 0.00, -0.0]
@@ -228,13 +228,13 @@ collision_spheres:
       - "center": [0.0, -0.015, 0.04]
         "radius": 0.005
 
-  dummy_center_indicator_link:
-      - "center": [0, 0, -0.1725]
-        "radius": 0.0001
+  # dummy_center_indicator_link:
+  #     - "center": [0, 0, -0.1725]
+  #       "radius": 0.0001
   
-  dummy_center_indicator_link_1:
-      - "center": [0, 0, -0.1725]
-        "radius": 0.0001
+  # dummy_center_indicator_link_1:
+  #     - "center": [0, 0, -0.1725]
+  #       "radius": 0.0001
 
   # gripper
   robotiq_arg2f_base_link_1:
@@ -280,9 +280,9 @@ collision_spheres:
   left_inner_finger_pad_1:
       - "center": [0.0, -0.0, 0.0]
         "radius": 0.01
-      - "center": [0.0, 0.0, 0.044]
+      - "center": [0.0, 0.0, 0.029]
         "radius": 0.01
-      - "center": [0.0, 0.0, -0.044]
+      - "center": [0.0, 0.0, -0.029]
         "radius": 0.01
 
   right_outer_finger_1:
@@ -304,9 +304,9 @@ collision_spheres:
   right_inner_finger_pad_1:
       - "center": [0.0, -0.0, 0.0]
         "radius": 0.01
-      - "center": [0.0, 0.0, 0.044]
+      - "center": [0.0, 0.0, 0.029]
         "radius": 0.01
-      - "center": [0.0, 0.0, -0.044]
+      - "center": [0.0, 0.0, -0.029]
         "radius": 0.01
   right_inner_knuckle_1:
       - "center": [0.0, 0.00, -0.0]

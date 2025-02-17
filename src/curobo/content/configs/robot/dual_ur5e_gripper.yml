@@ -36,7 +36,7 @@ robot_cfg:
       'right_outer_finger' ,
       'right_inner_finger',
       'right_inner_finger_pad',
-      'dummy_center_indicator_link',
+      # 'dummy_center_indicator_link',
       # hand 2
       'robotiq_arg2f_base_link_1',
       'left_outer_knuckle_1',
@@ -49,7 +49,7 @@ robot_cfg:
       'right_outer_finger_1' ,
       'right_inner_finger_1',
       'right_inner_finger_pad_1',
-      'dummy_center_indicator_link_1',
+      # 'dummy_center_indicator_link_1',
       ]
     collision_spheres: 'spheres/dual_ur5e_gripper.yml'
     collision_sphere_buffer: 0.001
@@ -235,4 +235,5 @@ robot_cfg:
                               ]
                               
       max_jerk: 500.0
-      max_acceleration: 40.0
+      # max_acceleration: 40.0
+      max_acceleration: 15.0
