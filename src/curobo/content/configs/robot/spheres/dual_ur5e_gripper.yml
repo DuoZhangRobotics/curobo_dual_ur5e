@@ -179,11 +179,25 @@ collision_spheres:
         "radius": 0.01
 
   left_inner_finger_pad:
-      - "center": [0.0, -0.0, 0.0]
+      - "center": [0.005, -0.0, 0.0]
         "radius": 0.01
-      - "center": [0.0, 0.0, 0.029]
+      - "center": [0.005, -0.0, 0.015]
         "radius": 0.01
-      - "center": [0.0, 0.0, -0.029]
+      - "center": [0.005, 0.0, 0.029]
+        "radius": 0.01
+      - "center": [0.005, -0.0, -0.015]
+        "radius": 0.01
+      - "center": [0.005, 0.0, -0.029]
+        "radius": 0.01
+      - "center": [-0.005, -0.0, 0.0]
+        "radius": 0.01
+      - "center": [-0.005, -0.0, 0.015]
+        "radius": 0.01
+      - "center": [-0.005, 0.0, 0.029]
+        "radius": 0.01
+      - "center": [-0.005, -0.0, -0.015]
+        "radius": 0.01
+      - "center": [-0.005, 0.0, -0.029]
         "radius": 0.01
 
   right_outer_finger:
@@ -203,11 +217,25 @@ collision_spheres:
         "radius": 0.01
 
   right_inner_finger_pad:
-      - "center": [0.0, -0.0, 0.0]
+      - "center": [0.005, -0.0, 0.0]
         "radius": 0.01
-      - "center": [0.0, 0.0, 0.029]
+      - "center": [0.005, -0.0, 0.015]
         "radius": 0.01
-      - "center": [0.0, 0.0, -0.029]
+      - "center": [0.005, 0.0, 0.029]
+        "radius": 0.01
+      - "center": [0.005, -0.0, -0.015]
+        "radius": 0.01
+      - "center": [0.005, 0.0, -0.029]
+        "radius": 0.01
+      - "center": [-0.005, -0.0, 0.0]
+        "radius": 0.01
+      - "center": [-0.005, -0.0, 0.015]
+        "radius": 0.01
+      - "center": [-0.005, 0.0, 0.029]
+        "radius": 0.01
+      - "center": [-0.005, -0.0, -0.015]
+        "radius": 0.01
+      - "center": [-0.005, 0.0, -0.029]
         "radius": 0.01
   right_inner_knuckle:
       - "center": [0.0, 0.00, -0.0]
@@ -278,11 +306,25 @@ collision_spheres:
         "radius": 0.01
 
   left_inner_finger_pad_1:
-      - "center": [0.0, -0.0, 0.0]
+      - "center": [0.005, -0.0, 0.0]
         "radius": 0.01
-      - "center": [0.0, 0.0, 0.029]
+      - "center": [0.005, -0.0, 0.015]
         "radius": 0.01
-      - "center": [0.0, 0.0, -0.029]
+      - "center": [0.005, 0.0, 0.029]
+        "radius": 0.01
+      - "center": [0.005, -0.0, -0.015]
+        "radius": 0.01
+      - "center": [0.005, 0.0, -0.029]
+        "radius": 0.01
+      - "center": [-0.005, -0.0, 0.0]
+        "radius": 0.01
+      - "center": [-0.005, -0.0, 0.015]
+        "radius": 0.01
+      - "center": [-0.005, 0.0, 0.029]
+        "radius": 0.01
+      - "center": [-0.005, -0.0, -0.015]
+        "radius": 0.01
+      - "center": [-0.005, 0.0, -0.029]
         "radius": 0.01
 
   right_outer_finger_1:
@@ -302,12 +344,27 @@ collision_spheres:
         "radius": 0.01
 
   right_inner_finger_pad_1:
-      - "center": [0.0, -0.0, 0.0]
+      - "center": [0.005, -0.0, 0.0]
         "radius": 0.01
-      - "center": [0.0, 0.0, 0.029]
+      - "center": [0.005, -0.0, 0.015]
         "radius": 0.01
-      - "center": [0.0, 0.0, -0.029]
+      - "center": [0.005, 0.0, 0.029]
         "radius": 0.01
+      - "center": [0.005, -0.0, -0.015]
+        "radius": 0.01
+      - "center": [0.005, 0.0, -0.029]
+        "radius": 0.01
+      - "center": [-0.005, -0.0, 0.0]
+        "radius": 0.01
+      - "center": [-0.005, -0.0, 0.015]
+        "radius": 0.01
+      - "center": [-0.005, 0.0, 0.029]
+        "radius": 0.01
+      - "center": [-0.005, -0.0, -0.015]
+        "radius": 0.01
+      - "center": [-0.005, 0.0, -0.029]
+        "radius": 0.01
+
   right_inner_knuckle_1:
       - "center": [0.0, 0.00, -0.0]
         "radius": 0.01
