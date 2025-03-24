@@ -13,7 +13,7 @@ cost:
   bound_cfg:
     activation_distance:
     - 0.001
-    null_space_weight: 0.0
+    null_space_weight: 1.0
     use_l2_kernel: true
     weight: 6617.916155103846
   cspace_cfg:
