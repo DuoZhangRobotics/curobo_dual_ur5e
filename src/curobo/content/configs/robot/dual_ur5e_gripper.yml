@@ -212,23 +212,23 @@ robot_cfg:
                         -0.0, # right_inner_knuckle_joint
                         0.0, # right_inner_finger_joint
                       ]
-      null_space_weight: [1.0, 1.0, 1.0, 10.0, 1.0, 1.0, 
+      null_space_weight: [1.0, 1.0, 1.0, 10.0, 10.0, 10.0, 
                           # finger joint
                           1.0, 
                           # mimic joints
                           1.0, 1.0, 1.0, 1.0, 1.0,
-                          1.0, 1.0, 1.0, 10.0, 1.0, 1.0,
+                          1.0, 1.0, 1.0, 10.0, 10.0, 10.0,
                           # finger joint_1
                           1.0, 
                           # mimic joints
                           1.0, 1.0, 1.0, 1.0, 1.0
                           ]
-      cspace_distance_weight: [0.5, 0.5, 0.5, 10.0, 1.0, 1.0,
+      cspace_distance_weight: [0.5, 0.5, 0.5, 10.0, 10.0, 10.0,
                             # finger joint
                             1.0, 
                             # mimic joints
                             1.0, 1.0, 1.0, 1.0, 1.0,
-                              0.5, 0.5, 0.5, 10.0, 1.0, 1.0,
+                              0.5, 0.5, 0.5, 10.0, 10.0, 10.0,
                             1.0, 
                             # mimic joints
                             1.0, 1.0, 1.0, 1.0, 1.0,
