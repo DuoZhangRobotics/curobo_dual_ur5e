@@ -654,7 +654,8 @@ class WorldCollision(WorldCollisionConfig):
 
         if run_marching_cubes:
             mesh = Mesh.from_pointcloud(
-                voxels[:, :3].detach().cpu().numpy(),
+                # voxels[:, :3].detach().cpu().numpy(),
+                voxels[:, :3],
                 pitch=voxel_size * 1.1,
             )
         else:
