@@ -40,7 +40,7 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    "--robot", type=str, default="dual_ur10e.yml", help="robot configuration to load"
+    "--robot", type=str, default="dual_ur5e_gripper.yml", help="robot configuration to load"
 )
 args = parser.parse_args()
 
