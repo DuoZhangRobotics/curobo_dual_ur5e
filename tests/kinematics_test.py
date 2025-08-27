@@ -251,3 +251,6 @@ def test_franka_toggle_link_collision(cfg):
     radius = link_radius - state.link_spheres_tensor[:, sph_idx, 3]
 
     assert torch.count_nonzero(radius == 0.0)
+
+if __name__ == "__main__":
+    pytest.main([__file__])

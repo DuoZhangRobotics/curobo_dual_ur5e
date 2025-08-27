@@ -37,6 +37,7 @@ robot_cfg:
       'right_inner_finger',
       'right_inner_finger_pad',
       # 'dummy_center_indicator_link',
+      "attached_object",
       # hand 2
       'robotiq_arg2f_base_link_1',
       'left_outer_knuckle_1',
@@ -50,117 +51,134 @@ robot_cfg:
       'right_inner_finger_1',
       'right_inner_finger_pad_1',
       # 'dummy_center_indicator_link_1',
+      "attached_object_1",
       ]
     collision_spheres: 'spheres/dual_ur5e_gripper.yml'
-    collision_sphere_buffer: 0.003
+    collision_sphere_buffer: 0.005
+    extra_collision_spheres: {
+      "attached_object": 10,
+      "attached_object_1": 10
+    }
+    extra_links: {
+                  "attached_object":{"parent_link_name": "robotiq_arg2f_base_link",
+                  "link_name": "attached_object", "fixed_transform": [0,0,0,1,0,0,0], "joint_type":"FIXED",
+                  "joint_name": "attach_joint"},
+                  "attached_object_1":{"parent_link_name": "robotiq_arg2f_base_link_1",
+                  "link_name": "attached_object_1", "fixed_transform": [0,0,0,1,0,0,0], "joint_type":"FIXED",
+                  "joint_name": "attach_joint_1"},
+                  }
 
     self_collision_ignore: {
-      "shoulder_link": ['upper_arm_link', "dummy_center_indicator_link"],
-      "upper_arm_link": ['forearm_link',  "dummy_center_indicator_link"],
-      "forearm_link": ['wrist_1_link', 'wrist_2_link' ,'wrist_3_link',  "dummy_center_indicator_link"],
-      "wrist_1_link": ["wrist_2_link","wrist_3_link","tool0", "robotiq_arg2f_base_link",  "dummy_center_indicator_link"],
-      "wrist_2_link": ["wrist_3_link", "tool0",  "robotiq_arg2f_base_link",  "dummy_center_indicator_link"],
-      "wrist_3_link": ["tool0", "robotiq_arg2f_base_link",  "dummy_center_indicator_link"],
+      "shoulder_link": ['upper_arm_link', "dummy_center_indicator_link", "attached_object", "attached_object_1"],
+      "upper_arm_link": ['forearm_link',  "dummy_center_indicator_link",  "attached_object", "attached_object_1"],
+      "forearm_link": ['wrist_1_link', 'wrist_2_link' ,'wrist_3_link',  "dummy_center_indicator_link", "attached_object", "attached_object_1"],
+      "wrist_1_link": ["wrist_2_link","wrist_3_link","tool0", "robotiq_arg2f_base_link",  "dummy_center_indicator_link", "attached_object", "attached_object_1"],
+      "wrist_2_link": ["wrist_3_link", "tool0",  "robotiq_arg2f_base_link",  "dummy_center_indicator_link", "attached_object", "attached_object_1"],
+      "wrist_3_link": ["tool0", "robotiq_arg2f_base_link",  "dummy_center_indicator_link", "attached_object", "attached_object_1"],
 
       "tool0": ['robotiq_arg2f_base_link', 'left_outer_finger', 'left_inner_finger_pad',
       'left_inner_knuckle', 'left_inner_finger', 'left_outer_knuckle',
       'right_outer_finger', 'right_inner_finger_pad',
-      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link"],
+      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link",  "attached_object", "attached_object_1"],
 
       "robotiq_arg2f_base_link": ['left_outer_finger', 'left_inner_finger_pad',
       'left_inner_knuckle', 'left_inner_finger', 'left_outer_knuckle',
       'right_outer_finger', 'right_inner_finger_pad',
-      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link"],
+      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link",  "attached_object", "attached_object_1"],
 
       "left_outer_finger": ['left_inner_finger_pad',
       'left_inner_knuckle', 'left_inner_finger', 'left_outer_knuckle',
       'right_outer_finger', 'right_inner_finger_pad',
-      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link"],
+      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link",  "attached_object", "attached_object_1"],
 
       "left_inner_finger_pad": [
       'left_inner_knuckle', 'left_inner_finger', 'left_outer_knuckle',
       'right_outer_finger', 'right_inner_finger_pad',
-      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link"],
+      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link",  "attached_object", "attached_object_1"],
 
       "left_inner_knuckle": ['left_inner_finger', 'left_outer_knuckle',
       'right_outer_finger', 'right_inner_finger_pad',
-      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link"],
+      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link",  "attached_object", "attached_object_1"],
 
       "left_inner_finger": ['left_outer_knuckle',
       'right_outer_finger', 'right_inner_finger_pad',
-      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link"],
+      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link", "attached_object", "attached_object_1"],
 
       "left_outer_knuckle": [
       'right_outer_finger', 'right_inner_finger_pad',
-      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link"],
+      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link",  "attached_object", "attached_object_1"],
 
 
 
       "right_outer_finger": ['right_inner_finger_pad',
-      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link"],
+      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link", "attached_object", "attached_object_1"],
 
       "right_inner_finger_pad": [
-      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link"],
+      'right_inner_knuckle', 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link", "attached_object", "attached_object_1"],
 
-      "right_inner_knuckle": [ 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link"],
+      "right_inner_knuckle": [ 'right_inner_finger', 'right_outer_knuckle',  "dummy_center_indicator_link", "attached_object", "attached_object_1"],
 
-      "right_inner_finger": [ 'right_outer_knuckle',  "dummy_center_indicator_link"],
-
+      "right_inner_finger": [ 'right_outer_knuckle',  "dummy_center_indicator_link", "attached_object", "attached_object_1"],
+      
+      "attached_object": ["attached_object_1"],
+      "attached_object_1": ["attached_object"],
 
       
-      "shoulder_link_1": ['upper_arm_link_1',  "dummy_center_indicator_link_1"],
-      "upper_arm_link_1": ['forearm_link_1',  "dummy_center_indicator_link_1"],
-      "forearm_link_1": ['wrist_1_link_1', 'wrist_2_link_1' ,'wrist_3_link_1',  "dummy_center_indicator_link_1"],
-      "wrist_1_link_1": ['wrist_2_link_1' ,'wrist_3_link_1', 'tool1', 'robotiq_arg2f_base_link_1',  "dummy_center_indicator_link_1"],
-      "wrist_2_link_1": [ 'wrist_3_link_1', 'tool1', 'robotiq_arg2f_base_link_1',  "dummy_center_indicator_link_1"],
-      "wrist_3_link_1": [ 'tool1', 'robotiq_arg2f_base_link_1',  "dummy_center_indicator_link_1"],
+      "shoulder_link_1": ['upper_arm_link_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
+      "upper_arm_link_1": ['forearm_link_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
+      "forearm_link_1": ['wrist_1_link_1', 'wrist_2_link_1' ,'wrist_3_link_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
+      "wrist_1_link_1": ['wrist_2_link_1' ,'wrist_3_link_1', 'tool1', 'robotiq_arg2f_base_link_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
+      "wrist_2_link_1": [ 'wrist_3_link_1', 'tool1', 'robotiq_arg2f_base_link_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
+      "wrist_3_link_1": [ 'tool1', 'robotiq_arg2f_base_link_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
 
       "tool1": ['robotiq_arg2f_base_link_1', 'left_outer_finger_1', 'left_inner_finger_pad_1',
       'left_inner_knuckle_1', 'left_inner_finger_1', 'left_outer_knuckle_1',
       'right_outer_finger_1', 'right_inner_finger_pad_1',
-      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1"],
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
   
       "robotiq_arg2f_base_link_1": ['left_outer_finger_1', 'left_inner_finger_pad_1',   
       'left_inner_knuckle_1', 'left_inner_finger_1', 'left_outer_knuckle_1',
       'right_outer_finger_1', 'right_inner_finger_pad_1',
-      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1"],
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
 
       "left_outer_finger_1": ['left_inner_finger_pad_1',
       'left_inner_knuckle_1', 'left_inner_finger_1', 'left_outer_knuckle_1',
       'right_outer_finger_1', 'right_inner_finger_pad_1',
-      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1"],
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
 
       "left_inner_finger_pad_1": [
       'left_inner_knuckle_1', 'left_inner_finger_1', 'left_outer_knuckle_1',
       'right_outer_finger_1', 'right_inner_finger_pad_1',
-      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1"],
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
       
       "left_inner_knuckle_1": ['left_inner_finger_1', 'left_outer_knuckle_1',
       'right_outer_finger_1', 'right_inner_finger_pad_1',
-      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1"],
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
 
       "left_inner_finger_1": ['left_outer_knuckle_1',
       'right_outer_finger_1', 'right_inner_finger_pad_1',
-      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1"],
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
 
       "left_outer_knuckle_1": [
       'right_outer_finger_1', 'right_inner_finger_pad_1',
-      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1"],
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
 
       "right_outer_finger_1": ['right_inner_finger_pad_1',
-      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1"],
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
 
       "right_inner_finger_pad_1": [
-      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1"],
+      'right_inner_knuckle_1', 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
 
-      "right_inner_knuckle_1": [ 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1"],
+      "right_inner_knuckle_1": [ 'right_inner_finger_1', 'right_outer_knuckle_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
 
-      "right_inner_finger_1": [ 'right_outer_knuckle_1',  "dummy_center_indicator_link_1"],
+      "right_inner_finger_1": [ 'right_outer_knuckle_1',  "dummy_center_indicator_link_1", "attached_object_1", "attached_object"],
       
       }
     self_collision_buffer: {
       'shoulder_link': 0.05,
       'shoulder_link_1': 0.05,
+      "attached_object": 0.0,
+      "attached_object_1": 0.0,
        }
     lock_joints: {'finger_joint': 0.0,
                 #  'right_outer_knuckle_joint': -0.0,

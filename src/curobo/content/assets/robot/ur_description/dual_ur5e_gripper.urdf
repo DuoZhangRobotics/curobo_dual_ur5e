@@ -674,7 +674,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="left_inner_finger_pad">
+  <link name="left_inner_ finger_pad">
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
        <mass value="0.11"/>
