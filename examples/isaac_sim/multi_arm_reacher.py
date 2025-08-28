@@ -81,6 +81,8 @@ from curobo.util.logger import setup_curobo_logger
 from curobo.util.usd_helper import UsdHelper
 from curobo.util_file import get_robot_configs_path, get_world_configs_path, join_path, load_yaml
 from curobo.wrap.reacher.motion_gen import MotionGen, MotionGenConfig, MotionGenPlanConfig
+from curobo.geom.types import WorldConfig, Cuboid, Material
+from curobo.geom.sphere_fit import SphereFitType
 
 ############################################################
 
@@ -163,8 +165,6 @@ def main():
         time_dilation_factor=0.5,
     )
 
-    usd_help.load_stage(my_world.stage)
-    usd_help.add_world_to_stage(world_cfg, base_frame="/World")
 
     cmd_plan = None
     cmd_idx = 0
@@ -188,11 +188,18 @@ def main():
         color=np.array([1.0, 0, 0]),
         size=0.05,
     )
+    cube = Cuboid(
+        name=f"object",
+        pose=[t_pos[0], t_pos[1], t_pos[2], 1, 0, 0, 0],
+        dims=[0.05, 0.05, 0.05],
+        color=[1, 0, 0, 1]
+    )
 
     # create new targets for new links:
     ee_idx = link_names.index(ee_link_name)
     target_links = {}
     names = []
+    cube1 = None
     for i in link_names:
         if i != ee_link_name:
             k_pose = np.ravel(link_retract_pose[i].to_list())
@@ -207,7 +214,50 @@ def main():
                 color=color,
                 size=0.05,
             )
+            cube1 = Cuboid(
+                name=f"object_1",
+                pose=[k_pose[0], k_pose[1], k_pose[2], 1, 0, 0, 0],
+                dims=[0.05, 0.05, 0.05],
+                color=[1, 0, 0, 1]
+            )
             names.append("/World/target_" + i)
+    cubes = [
+        # cube,
+        # cube1
+    ]
+    world_cfg = WorldConfig(cuboid=world_cfg_table.cuboid+cubes, mesh=world_cfg1.mesh)
+    motion_gen.clear_world_cache()
+    motion_gen.update_world(world_cfg)
+    usd_help.load_stage(my_world.stage)
+    usd_help.add_world_to_stage(world_cfg, base_frame="/World")
+
+    cu_js = JointState.from_position(
+        motion_gen.get_retract_config().view(1, -1)
+    )
+    # motion_gen.attach_objects_to_robot(
+    #     cu_js,
+    #     ["object"],
+    #     sphere_fit_type=SphereFitType.VOXEL_VOLUME_SAMPLE_SURFACE,
+    #     # sphere_fit_type=SphereFitType.VOXEL_VOLUME_INSIDE,
+    #     # sphere_fit_type=SphereFitType.SAMPLE_SURFACE,
+    #     voxelize_method="subdivide",
+    #     surface_sphere_radius=0.0005,
+    #     # world_objects_pose_offset=Pose.from_list([0, 0, 0.01, 1, 0, 0, 0], self.tensor_args),
+    #     link_name="attached_object",
+    #     remove_obstacles_from_world_config=True
+    # )
+
+    # motion_gen.attach_objects_to_robot(
+    #     cu_js,
+    #     ["object_1"],
+    #     sphere_fit_type=SphereFitType.VOXEL_VOLUME_SAMPLE_SURFACE,
+    #     # sphere_fit_type=SphereFitType.VOXEL_VOLUME_INSIDE,
+    #     # sphere_fit_type=SphereFitType.SAMPLE_SURFACE,
+    #     voxelize_method="subdivide",
+    #     surface_sphere_radius=0.0005,
+    #     # world_objects_pose_offset=Pose.from_list([0, 0, 0.01, 1, 0, 0, 0], self.tensor_args),
+    #     link_name="attached_object_1"
+    # )
     i = 0
     while simulation_app.is_running():
         my_world.step(render=True)

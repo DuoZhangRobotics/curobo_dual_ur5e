@@ -52,7 +52,7 @@ import warp as wp
 # CuRobo
 from curobo.cuda_robot_model.cuda_robot_model import CudaRobotModel
 from curobo.geom.sdf.utils import create_collision_checker
-from curobo.geom.sdf.world import CollisionCheckerType, WorldCollision, WorldCollisionConfig
+from curobo.geom.sdf.world import CollisionCheckerType, WorldCollision, WorldCollisionConfig, CollisionQueryBuffer
 from curobo.geom.sphere_fit import SphereFitType
 from curobo.geom.types import Cuboid, Obstacle, WorldConfig
 from curobo.graph.graph_base import GraphConfig, GraphPlanBase, GraphResult
@@ -2334,6 +2334,7 @@ class MotionGen(MotionGenConfig):
         voxelize_method: str = "ray",
         world_objects_pose_offset: Optional[Pose] = None,
         remove_obstacles_from_world_config: bool = False,
+        ee_name: str = None
     ) -> bool:
         """Attach an object or objects from world to a robot's link.
 
@@ -2368,6 +2369,9 @@ class MotionGen(MotionGenConfig):
         log_info("MG: Attach objects to robot")
         kin_state = self.compute_kinematics(joint_state)
         ee_pose = kin_state.ee_pose  # w_T_ee
+        link_poses = kin_state.link_poses
+        if ee_name is not None:
+            ee_pose = link_poses[ee_name]
         if world_objects_pose_offset is not None:
             # add offset from ee:
             ee_pose = world_objects_pose_offset.inverse().multiply(ee_pose)
@@ -2376,6 +2380,9 @@ class MotionGen(MotionGenConfig):
             # ee_T_w
         ee_pose = ee_pose.inverse()  # ee_T_w to multiply all objects later
         max_spheres = self.robot_cfg.kinematics.kinematics_config.get_number_of_spheres(link_name)
+        print(f"{link_name} has {max_spheres} spheres")
+        print(f"ee_pose={ee_pose}")
+        print(f"link_pose = {link_poses}")
         n_spheres = int(max_spheres / len(object_names))
         sphere_tensor = torch.zeros((max_spheres, 4))
         sphere_tensor[:, 3] = -10.0
