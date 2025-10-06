@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<robot name="ur5e_robot">
+  <virtual_joint name="world_to_base" type="fixed" parent_frame="world" child_link="base_fixture_link" />
+  <group name="dummy_center_indicator_link_group">
+    <chain base_link="base_fixture_link" tip_link="dummy_center_indicator_link" />
+  </group>
+  <group name="dummy_center_indicator_link_1_group">
+    <chain base_link="base_fixture_link" tip_link="dummy_center_indicator_link_1" />
+  </group>
+  <group_state name="retract" group="dummy_center_indicator_link_group">
+    <joint name="shoulder_pan_joint" value="0.000000" />
+    <joint name="shoulder_lift_joint" value="-2.200000" />
+    <joint name="elbow_joint" value="1.900000" />
+    <joint name="wrist_1_joint" value="-1.383000" />
+    <joint name="wrist_2_joint" value="-1.570000" />
+    <joint name="wrist_3_joint" value="0.000000" />
+  </group_state>
+  <group_state name="retract" group="dummy_center_indicator_link_1_group">
+    <joint name="shoulder_pan_joint_1" value="0.000000" />
+    <joint name="shoulder_lift_joint_1" value="-2.200000" />
+    <joint name="elbow_joint_1" value="1.900000" />
+    <joint name="wrist_1_joint_1" value="-1.383000" />
+    <joint name="wrist_2_joint_1" value="-1.570000" />
+    <joint name="wrist_3_joint_1" value="0.000000" />
+  </group_state>
+  <passive_joint name="finger_joint" />
+  <passive_joint name="finger_joint_1" />
+  <passive_joint name="left_inner_finger_joint" />
+  <passive_joint name="left_inner_finger_joint_1" />
+  <passive_joint name="left_inner_knuckle_joint" />
+  <passive_joint name="left_inner_knuckle_joint_1" />
+  <passive_joint name="right_inner_finger_joint" />
+  <passive_joint name="right_inner_finger_joint_1" />
+  <passive_joint name="right_inner_knuckle_joint" />
+  <passive_joint name="right_inner_knuckle_joint_1" />
+  <passive_joint name="right_outer_knuckle_joint" />
+  <passive_joint name="right_outer_knuckle_joint_1" />
+  <disable_collisions link1="attached_object" link2="attached_object_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="forearm_link" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="forearm_link_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="left_inner_finger" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="left_inner_finger_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="left_inner_finger_pad" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="left_inner_finger_pad_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="left_inner_knuckle" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="left_inner_knuckle_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="left_outer_finger" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="left_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="left_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="left_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="right_inner_finger" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="right_inner_finger_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="right_inner_finger_pad" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="right_inner_finger_pad_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="right_inner_knuckle" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="right_inner_knuckle_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="right_outer_finger" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="right_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="robotiq_arg2f_base_link" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="robotiq_arg2f_base_link_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="shoulder_link" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="shoulder_link_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="tool0" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="tool1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="upper_arm_link" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="upper_arm_link_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="wrist_1_link" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="wrist_1_link_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="wrist_2_link" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="wrist_2_link_1" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="wrist_3_link" reason="Configured" />
+  <disable_collisions link1="attached_object" link2="wrist_3_link_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="forearm_link" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="forearm_link_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="left_inner_finger" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="left_inner_finger_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="left_inner_finger_pad" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="left_inner_finger_pad_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="left_inner_knuckle" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="left_inner_knuckle_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="left_outer_finger" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="left_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="left_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="left_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="right_inner_finger" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="right_inner_finger_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="right_inner_finger_pad" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="right_inner_finger_pad_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="right_inner_knuckle" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="right_inner_knuckle_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="right_outer_finger" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="right_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="robotiq_arg2f_base_link" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="robotiq_arg2f_base_link_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="shoulder_link" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="shoulder_link_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="tool0" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="tool1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="upper_arm_link" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="upper_arm_link_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="wrist_1_link" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="wrist_1_link_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="wrist_2_link" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="wrist_2_link_1" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="wrist_3_link" reason="Configured" />
+  <disable_collisions link1="attached_object_1" link2="wrist_3_link_1" reason="Configured" />
+  <disable_collisions link1="forearm_link" link2="upper_arm_link" reason="Configured" />
+  <disable_collisions link1="forearm_link" link2="wrist_1_link" reason="Configured" />
+  <disable_collisions link1="forearm_link" link2="wrist_2_link" reason="Configured" />
+  <disable_collisions link1="forearm_link" link2="wrist_3_link" reason="Configured" />
+  <disable_collisions link1="forearm_link_1" link2="upper_arm_link_1" reason="Configured" />
+  <disable_collisions link1="forearm_link_1" link2="wrist_1_link_1" reason="Configured" />
+  <disable_collisions link1="forearm_link_1" link2="wrist_2_link_1" reason="Configured" />
+  <disable_collisions link1="forearm_link_1" link2="wrist_3_link_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger" link2="left_inner_finger_pad" reason="Configured" />
+  <disable_collisions link1="left_inner_finger" link2="left_inner_knuckle" reason="Configured" />
+  <disable_collisions link1="left_inner_finger" link2="left_outer_finger" reason="Configured" />
+  <disable_collisions link1="left_inner_finger" link2="left_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="left_inner_finger" link2="right_inner_finger" reason="Configured" />
+  <disable_collisions link1="left_inner_finger" link2="right_inner_finger_pad" reason="Configured" />
+  <disable_collisions link1="left_inner_finger" link2="right_inner_knuckle" reason="Configured" />
+  <disable_collisions link1="left_inner_finger" link2="right_outer_finger" reason="Configured" />
+  <disable_collisions link1="left_inner_finger" link2="right_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="left_inner_finger" link2="robotiq_arg2f_base_link" reason="Configured" />
+  <disable_collisions link1="left_inner_finger" link2="tool0" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_1" link2="left_inner_finger_pad_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_1" link2="left_inner_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_1" link2="left_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_1" link2="left_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_1" link2="right_inner_finger_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_1" link2="right_inner_finger_pad_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_1" link2="right_inner_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_1" link2="right_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_1" link2="right_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_1" link2="robotiq_arg2f_base_link_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_1" link2="tool1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad" link2="left_inner_knuckle" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad" link2="left_outer_finger" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad" link2="left_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad" link2="right_inner_finger" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad" link2="right_inner_finger_pad" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad" link2="right_inner_knuckle" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad" link2="right_outer_finger" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad" link2="right_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad" link2="robotiq_arg2f_base_link" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad" link2="tool0" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad_1" link2="left_inner_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad_1" link2="left_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad_1" link2="left_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad_1" link2="right_inner_finger_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad_1" link2="right_inner_finger_pad_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad_1" link2="right_inner_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad_1" link2="right_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad_1" link2="right_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad_1" link2="robotiq_arg2f_base_link_1" reason="Configured" />
+  <disable_collisions link1="left_inner_finger_pad_1" link2="tool1" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle" link2="left_outer_finger" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle" link2="left_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle" link2="right_inner_finger" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle" link2="right_inner_finger_pad" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle" link2="right_inner_knuckle" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle" link2="right_outer_finger" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle" link2="right_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle" link2="robotiq_arg2f_base_link" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle" link2="tool0" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle_1" link2="left_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle_1" link2="left_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle_1" link2="right_inner_finger_1" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle_1" link2="right_inner_finger_pad_1" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle_1" link2="right_inner_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle_1" link2="right_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle_1" link2="right_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle_1" link2="robotiq_arg2f_base_link_1" reason="Configured" />
+  <disable_collisions link1="left_inner_knuckle_1" link2="tool1" reason="Configured" />
+  <disable_collisions link1="left_outer_finger" link2="left_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="left_outer_finger" link2="right_inner_finger" reason="Configured" />
+  <disable_collisions link1="left_outer_finger" link2="right_inner_finger_pad" reason="Configured" />
+  <disable_collisions link1="left_outer_finger" link2="right_inner_knuckle" reason="Configured" />
+  <disable_collisions link1="left_outer_finger" link2="right_outer_finger" reason="Configured" />
+  <disable_collisions link1="left_outer_finger" link2="right_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="left_outer_finger" link2="robotiq_arg2f_base_link" reason="Configured" />
+  <disable_collisions link1="left_outer_finger" link2="tool0" reason="Configured" />
+  <disable_collisions link1="left_outer_finger_1" link2="left_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_outer_finger_1" link2="right_inner_finger_1" reason="Configured" />
+  <disable_collisions link1="left_outer_finger_1" link2="right_inner_finger_pad_1" reason="Configured" />
+  <disable_collisions link1="left_outer_finger_1" link2="right_inner_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_outer_finger_1" link2="right_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="left_outer_finger_1" link2="right_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_outer_finger_1" link2="robotiq_arg2f_base_link_1" reason="Configured" />
+  <disable_collisions link1="left_outer_finger_1" link2="tool1" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle" link2="right_inner_finger" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle" link2="right_inner_finger_pad" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle" link2="right_inner_knuckle" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle" link2="right_outer_finger" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle" link2="right_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle" link2="robotiq_arg2f_base_link" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle" link2="tool0" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle_1" link2="right_inner_finger_1" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle_1" link2="right_inner_finger_pad_1" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle_1" link2="right_inner_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle_1" link2="right_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle_1" link2="right_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle_1" link2="robotiq_arg2f_base_link_1" reason="Configured" />
+  <disable_collisions link1="left_outer_knuckle_1" link2="tool1" reason="Configured" />
+  <disable_collisions link1="right_inner_finger" link2="right_inner_finger_pad" reason="Configured" />
+  <disable_collisions link1="right_inner_finger" link2="right_inner_knuckle" reason="Configured" />
+  <disable_collisions link1="right_inner_finger" link2="right_outer_finger" reason="Configured" />
+  <disable_collisions link1="right_inner_finger" link2="right_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="right_inner_finger" link2="robotiq_arg2f_base_link" reason="Configured" />
+  <disable_collisions link1="right_inner_finger" link2="tool0" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_1" link2="right_inner_finger_pad_1" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_1" link2="right_inner_knuckle_1" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_1" link2="right_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_1" link2="right_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_1" link2="robotiq_arg2f_base_link_1" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_1" link2="tool1" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_pad" link2="right_inner_knuckle" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_pad" link2="right_outer_finger" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_pad" link2="right_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_pad" link2="robotiq_arg2f_base_link" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_pad" link2="tool0" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_pad_1" link2="right_inner_knuckle_1" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_pad_1" link2="right_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_pad_1" link2="right_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_pad_1" link2="robotiq_arg2f_base_link_1" reason="Configured" />
+  <disable_collisions link1="right_inner_finger_pad_1" link2="tool1" reason="Configured" />
+  <disable_collisions link1="right_inner_knuckle" link2="right_outer_finger" reason="Configured" />
+  <disable_collisions link1="right_inner_knuckle" link2="right_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="right_inner_knuckle" link2="robotiq_arg2f_base_link" reason="Configured" />
+  <disable_collisions link1="right_inner_knuckle" link2="tool0" reason="Configured" />
+  <disable_collisions link1="right_inner_knuckle_1" link2="right_outer_finger_1" reason="Configured" />
+  <disable_collisions link1="right_inner_knuckle_1" link2="right_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="right_inner_knuckle_1" link2="robotiq_arg2f_base_link_1" reason="Configured" />
+  <disable_collisions link1="right_inner_knuckle_1" link2="tool1" reason="Configured" />
+  <disable_collisions link1="right_outer_finger" link2="right_outer_knuckle" reason="Configured" />
+  <disable_collisions link1="right_outer_finger" link2="robotiq_arg2f_base_link" reason="Configured" />
+  <disable_collisions link1="right_outer_finger" link2="tool0" reason="Configured" />
+  <disable_collisions link1="right_outer_finger_1" link2="right_outer_knuckle_1" reason="Configured" />
+  <disable_collisions link1="right_outer_finger_1" link2="robotiq_arg2f_base_link_1" reason="Configured" />
+  <disable_collisions link1="right_outer_finger_1" link2="tool1" reason="Configured" />
+  <disable_collisions link1="right_outer_knuckle" link2="robotiq_arg2f_base_link" reason="Configured" />
+  <disable_collisions link1="right_outer_knuckle" link2="tool0" reason="Configured" />
+  <disable_collisions link1="right_outer_knuckle_1" link2="robotiq_arg2f_base_link_1" reason="Configured" />
+  <disable_collisions link1="right_outer_knuckle_1" link2="tool1" reason="Configured" />
+  <disable_collisions link1="robotiq_arg2f_base_link" link2="tool0" reason="Configured" />
+  <disable_collisions link1="robotiq_arg2f_base_link" link2="wrist_1_link" reason="Configured" />
+  <disable_collisions link1="robotiq_arg2f_base_link" link2="wrist_2_link" reason="Configured" />
+  <disable_collisions link1="robotiq_arg2f_base_link" link2="wrist_3_link" reason="Configured" />
+  <disable_collisions link1="robotiq_arg2f_base_link_1" link2="tool1" reason="Configured" />
+  <disable_collisions link1="robotiq_arg2f_base_link_1" link2="wrist_1_link_1" reason="Configured" />
+  <disable_collisions link1="robotiq_arg2f_base_link_1" link2="wrist_2_link_1" reason="Configured" />
+  <disable_collisions link1="robotiq_arg2f_base_link_1" link2="wrist_3_link_1" reason="Configured" />
+  <disable_collisions link1="shoulder_link" link2="upper_arm_link" reason="Configured" />
+  <disable_collisions link1="shoulder_link_1" link2="upper_arm_link_1" reason="Configured" />
+  <disable_collisions link1="tool0" link2="wrist_1_link" reason="Configured" />
+  <disable_collisions link1="tool0" link2="wrist_2_link" reason="Configured" />
+  <disable_collisions link1="tool0" link2="wrist_3_link" reason="Configured" />
+  <disable_collisions link1="tool1" link2="wrist_1_link_1" reason="Configured" />
+  <disable_collisions link1="tool1" link2="wrist_2_link_1" reason="Configured" />
+  <disable_collisions link1="tool1" link2="wrist_3_link_1" reason="Configured" />
+  <disable_collisions link1="wrist_1_link" link2="wrist_2_link" reason="Configured" />
+  <disable_collisions link1="wrist_1_link" link2="wrist_3_link" reason="Configured" />
+  <disable_collisions link1="wrist_1_link_1" link2="wrist_2_link_1" reason="Configured" />
+  <disable_collisions link1="wrist_1_link_1" link2="wrist_3_link_1" reason="Configured" />
+  <disable_collisions link1="wrist_2_link" link2="wrist_3_link" reason="Configured" />
+  <disable_collisions link1="wrist_2_link_1" link2="wrist_3_link_1" reason="Configured" />
+</robot>
